@@ -1,0 +1,19 @@
+[{
+    "ISBN": "9789573264354",
+    "title": "Percy Jackson & the Olympians: The Lightning Thief",
+    "author":  "Rick Riordan",
+    "genre": 2,
+    "publishingYear": 2009
+}, {
+    "ISBN": "9780441172719",
+    "title": "Dune",
+    "author":  "Frank Herbert",
+    "genre": 1,
+    "publishingYear": 1990
+}, {
+    "ISBN": "9789571173689",
+    "title": "A People's History of the United States ",
+    "author":  "Howard Zinn",
+    "genre": 4,
+    "publishingYear": 1980
+}]

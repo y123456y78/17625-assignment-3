@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+// Genre for the books in inventory service.
+enum Genre {
+    GENRE_UNSPECIFIED = 0;
+    GENRE_SCIENCE_FICTION = 1;
+    GENRE_FANTASY = 2;
+    GENRE_MYSTERY = 3;
+    GENRE_HISTORICAL = 4;
+}
+
+// A Book contains its details including ISBN, title, author, genre,
+// and publishingYear. These also be used in CreateBook and GetBook requests.
+message Book {
+  // The unique string id of the book.
+  string ISBN = 1;
+
+  // The title of the book.
+  string title = 2; 
+
+  // The name of author of the book.
+  string author = 3;
+
+  // The genre of the book.
+  Genre genre = 4;
+
+  // The publishing year or the book.
+  int32 publishingYear = 5;
+}
+
+// Status of inventory item
+enum Status {
+    STATUS_UNSPECIFIED = 0;
+    STATUS_AVAILABLE = 1;
+    STATUS_TAKEN = 2;
+}
+
+message InventoryItem {
+    // The primary key of the inventory item.
+    int32 inventoryNumber = 1;
+
+    // The stored item of the inventory item.
+    oneof item {
+        Book book = 2;
+    }
+
+    // The status of the inventory item.
+    Status status = 3;
+}
+
+message CreateBookResponse {
+    // The successful status of the create book request.
+    bool success = 1;
+
+    // The message of the create book result.
+    string message = 2;
+}
+
+message GetBookRequest {
+  // The unique string id of the book.
+  string ISBN = 1;
+}
+
+message GetBookReponse {
+  // The boolean represent the book's existence.
+  bool found = 1;
+
+  // The book's detials if found.
+  Book book = 2;
+}

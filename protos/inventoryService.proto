@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "inventoryObject.proto";
+
+// Interface exported by the server.
+service InventoryService {
+  // Add a book into inventory service. Require details of new book as
+  // input arguments.
+  rpc CreateBook(Book) returns (CreateBookResponse) {}
+
+  // Search a book from inventory service by ISBN.
+  rpc GetBook(GetBookRequest) returns (GetBookReponse) {}
+}
