@@ -10,7 +10,7 @@ TEST_WITH_SERVER = (os.getenv('SERVER_TEST') == 'True')
 class TestGetBookTitles(unittest.TestCase):
     def __init__(self, *args, **kwargs):
         super(TestGetBookTitles, self).__init__(*args, **kwargs)
-        self.testData = db.readInvetoryDB()[:2] # take first two instances as test data
+        self.testData = db.readInvetoryData()[:2] # take first two instances as test data
         self.testResponse = [object.GetBookReponse(found=True, book=book) for book in self.testData]
         self.input = [book.ISBN for book in self.testData]
         self.expectedResult = [book.title for book in self.testData]

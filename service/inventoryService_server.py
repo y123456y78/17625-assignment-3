@@ -10,7 +10,7 @@ ADDRESS = '[::]:50051'
 """Provides methods that implement functionality of inventory service server."""
 class InventoryServiceServicer(service.InventoryServiceServicer):
     def __init__(self):
-        self.db = db.readInvetoryDB()
+        self.db = db.readInvetoryData()
 
     """Implement create book funcitonality.
         Handle create book request and add a new book into the database.

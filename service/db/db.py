@@ -12,7 +12,7 @@ import service.inventoryObject_pb2 as object
         The full contents of the inventory database as a sequence of 
         inventoryObject_pb2.Book.
 """
-def readInvetoryDB():
+def readInvetoryData():
     books = []
     with open("./service/db/inventoryDB.json") as inventoryDB:
         for item in json.load(inventoryDB):
